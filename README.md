@@ -1,23 +1,19 @@
-# image-classification-template
+# Object Classification
 
-[Image Classification or Identification](https://en.wikipedia.org/wiki/Computer_vision#Recognition) is one of the most common [CV](https://en.wikipedia.org/wiki/Computer_vision) problems. The goal is to analyze an image and predict the main object represented. 
-*What can you use it for?* Here are a few ideas - detecting diseases from medical images, monitoring the status of plants before the harvest and recognize person, animals and objects.  
+[Image Classification](https://en.wikipedia.org/wiki/Computer_vision#Recognition) (or Image Identification) is one of the pilot use cases for deep learning. The goal of the task is to train a model capable of identifying the main object of interest in an image. *What can you use it for?* Here are a few ideas - [identify landmarks in photos](https://ai.googleblog.com/2018/03/google-landmarks-new-dataset-and.html), [ImageNet challenge](http://www.image-net.org/challenges/LSVRC/), identifying celebrities (or yourself) in images, detecting anomalies in medical images.
 
-### Predicting breed of dog images
+### Dog Breed Classification
 
-In this notebook, we will apply [Transfer Learning](https://cs231n.github.io/transfer-learning/) by building new layers on top of Xception mode pre-trained on ImageNet to classify the first 10 dog breeds classes of the dog-breed dataset.
+In this notebook, we will build a model to identify dog breeds in an image. How well you can tell your Norfolk Terriers from your Norwich Terriers? 
 
-*Note: we have reduced the number of class to fit the model in the CPU instance.*
+<img src="https://raw.githubusercontent.com/floydhub/image-classification-template/master/images/classification.png" width="500" height="500" align="center"/>
 
-![classification](images/classification.png)
+We will use the [Kaggle's Dog Breed Dataset](https://www.kaggle.com/c/dog-breed-identification) dataset for training. With 120 breeds of dogs and a limited number training images per class, you might find the problem more, err, ruff than you anticipated. 
 
-
-We will use the [Kaggle's Dog Breed Dataset](https://www.kaggle.com/c/dog-breed-identification) dataset for training our model. The dataset is subset of ImageNet in order to practice fine-grained image categorization. How well you can tell your Norfolk Terriers from your Norwich Terriers? With 120 breeds of dogs and a limited number training images per class, you might find the problem more, err, ruff than you anticipated.
-
-![dataset](images/dataset.png)
+To speed things up, we will apply [Transfer Learning](https://cs231n.github.io/transfer-learning/) by [building new layers on top of the Xception model]( https://www.depends-on-the-definition.com/transfer-learning-for-dog-breed-identification/mode) pre-trained on ImageNet to classify the top 10 dog breeds. *Note: We have reduced the number of classes (i.e. dog breeds) to 10 to fit the model in a CPU machine.*
 
 We will:
-- Preprocess images data for CV
-- Transfer Learning: Build new layers on top of Xception model pre-trained on ImageNet using Keras and Tensorflow
+- Preprocess images data for computer vision tasks
+- Transfer Learning: build new layers on top of the pretrained Xception model using Keras and Tensorflow
 - Evaluate our model on the test set
 - Run the model on new dog images from the web!
