@@ -5,6 +5,7 @@ from os.path import join
 import matplotlib.pyplot as plt
 
 from keras.preprocessing import image
+from keras.preprocessing.image import ImageDataGenerator, img_to_array, array_to_img, load_img
 from keras.applications import xception
 
 from mpl_toolkits.axes_grid1 import ImageGrid
@@ -56,6 +57,34 @@ def show_images(num_classes, labels, data_dir):
         ax.axis('off')
     plt.show()
 
+def data_augmentation_example(input_path, count):
+    # load image to array
+    image = img_to_array(load_img(input_path))
+
+    # reshape to array rank 4
+    image = image.reshape((1,) + image.shape)
+
+    # let's create infinite flow of images
+    train_datagen = ImageDataGenerator(rotation_range=45,
+                                   width_shift_range=0.2,
+                                   height_shift_range=0.2,
+                                   shear_range=0.2,
+                                   zoom_range=0.25,
+                                   horizontal_flip=True,
+                                   fill_mode='nearest')
+    images_flow = train_datagen.flow(image, batch_size=1)
+
+    plt.figure(figsize=(9,9))
+    for idx, new_images in enumerate(images_flow):
+        if idx < count:
+            plt.subplot(330 + 1 + idx)
+            new_image = array_to_img(new_images[0], scale=True)
+            plt.imshow(new_image)
+            plt.axis('off')
+        else:
+            plt.show()
+            break
+    
 def prediction_from_url(url, model, selected_breed_list):
     test_image_path = '/tmp/test.jpg'
     response = requests.get(url)
