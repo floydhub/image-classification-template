@@ -3,3 +3,5 @@ machine: cpu
 data:
   - source: floydhub/datasets/dog-breed-identification/1
     destination: dogbreed
+  - source: floydhub/datasets/keras-xception-weights/1
+    destination: xception
