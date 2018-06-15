@@ -2,6 +2,12 @@
 
 [Image Classification](https://en.wikipedia.org/wiki/Computer_vision#Recognition) (or Image Identification) is one of the pilot use cases for deep learning. The goal of the task is to train a model capable of identifying the main object of interest in an image. *What can you use it for?* Here are a few ideas - [identify landmarks in photos](https://ai.googleblog.com/2018/03/google-landmarks-new-dataset-and.html), [ImageNet challenge](http://www.image-net.org/challenges/LSVRC/), identifying celebrities (or yourself) in images, detecting anomalies in medical images.
 
+### Try it now
+
+[![Run on FloydHub](https://s3-us-west-2.amazonaws.com/floydhub-assets/button/button.svg)](https://floydhub.com/run?template=https://github.com/floydhub/image-classification-template)
+
+Click this button to open a Workspace on FloydHub that will train this model.
+
 ### Dog Breed Classification
 
 In this notebook, we will build a model to identify dog breeds in an image. How well you can tell your Norfolk Terriers from your Norwich Terriers? 
