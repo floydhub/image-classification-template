@@ -92,9 +92,6 @@ def prediction_from_url(url, model, selected_breed_list):
         with open(test_image_path, 'wb') as f:
             f.write(response.content)
     img = read_img('test', '/', 'tmp', (224, 224))
-    
-#     img = image.load_img(test_image_path, target_size=(224, 224))
-#     img = image.img_to_array(img)
     x = xception.preprocess_input(np.expand_dims(img.copy(), axis=0))
     preds = model.predict(x)
     pred_idx = np.argmax(preds, axis=1)[0]
