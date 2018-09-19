@@ -12,7 +12,7 @@ Click this button to open a Workspace on FloydHub that will train this model.
 
 In this notebook, we will build a model to identify dog breeds in an image. How well you can tell your Norfolk Terriers from your Norwich Terriers? 
 
-<img src="https://raw.githubusercontent.com/floydhub/image-classification-template/master/images/classification.png" width="500" height="500" align="center"/>
+![Classification](https://raw.githubusercontent.com/floydhub/image-classification-template/master/images/classification.png)
 
 We will use the [Kaggle's Dog Breed Dataset](https://www.kaggle.com/c/dog-breed-identification) dataset for training. With 120 breeds of dogs and a limited number training images per class, you might find the problem more, err, ruff than you anticipated. 
 
